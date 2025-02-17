@@ -44,10 +44,10 @@ function Footer() {
           and structure.
         </span>
       </div>
-      <div className="flex justify-center gap-6 mb-4">
+      <div className="flex justify-center gap-6 ">
         <Icon icon={<BsGithub size={24} />} url={"https://github.com/nomsou"} />
       </div>
-      <div className="text-center text-m">
+      {/* <div className="text-center text-m">
         Source code for this project is available{" "}
         <a
           className="underline hover:text-green-500"
@@ -58,7 +58,7 @@ function Footer() {
           here
         </a>
         .
-      </div>
+      </div> */}
     </footer>
   );
 }
