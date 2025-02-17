@@ -7,6 +7,7 @@ import Semester from "../components/Semester";
 import Button from "../components/Button";
 import ProgressBar from "../components/ProgressBar";
 import { CourseObject, calculateCGPA } from "../utils/utils";
+import Link from "next/link";
 
 function Page() {
   const [semesters, setSemesters] = useState([]);
@@ -109,10 +110,11 @@ function Page() {
     <>
       <div className="content flex flex-col grow p-6 px-8 gap-3 bg-[#E5E7EB]">
         {/* Header */}
-        <span className="content__header mb-3 border-b-4 border-blue-300 self-start pb-3 text-green-900 font-extrabold">
-          GPA CALCULATOR
+        <span className="content__header mb-3 border-4 border-green-800 self-start p-3 text-green-900 font-extrabold rounded-lg shadow-lg hover:shadow-2xl hover:border-green-600 transition-all duration-300">
+          <Link href="/" passHref>
+            <span className="cursor-pointer">GPA CALCULATOR</span>
+          </Link>
         </span>
-
         {/* Dialup section */}
         <div className="flex border-b-2 pb-3">
           <div className="w-52 ml-auto mr-auto">
