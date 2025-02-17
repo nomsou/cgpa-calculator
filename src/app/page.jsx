@@ -107,12 +107,9 @@ function Page() {
 
   return (
     <>
-      {/* Ads Banner */}
-      {/* <div className="w-full"> */}
-      {/* </div> */}
-      <div className="content flex flex-col grow p-3 px-7 gap-1 bg-[#F1F6F6]">
+      <div className="content flex flex-col grow p-6 px-8 gap-3 bg-[#E5E7EB]">
         {/* Header */}
-        <span className="content__header mb-2 border-b-4 border-indigo-500 self-start pb-3 text-[#03045E] font-extrabold">
+        <span className="content__header mb-3 border-b-4 border-red-300 self-start pb-3 text-red-600 font-extrabold">
           GPA CALCULATOR
         </span>
 
@@ -123,10 +120,10 @@ function Page() {
           </div>
           <div className="flex flex-col">
             <span className="mb-4">
-              <span>Units Total: {results.totalUnits}</span>
+              <span>Total Units: {results.totalUnits}</span>
             </span>
             <button
-              className="bg-slate-800 p-3 rounded text-white"
+              className="bg-teal-800 p-3 rounded text-white hover:bg-teal-700"
               onClick={handleViewAnalysis}
             >
               View Analysis
@@ -150,7 +147,7 @@ function Page() {
             })}
           </div>
           <button
-            className="ml-auto rounded border p-2 bg-black text-white"
+            className="ml-auto rounded border p-2 bg-blue-500 text-white hover:bg-blue-400"
             onClick={addSemester}
           >
             Add Semester +
@@ -158,7 +155,7 @@ function Page() {
         </div>
 
         {/* Calculator */}
-        <div className="flex flex-col bg-white grow p-3">
+        <div className="flex flex-col bg-white grow p-4 shadow-md">
           {semesters.length > 0 && (
             <Semester
               courses={semesters[activeSemesterID].courses}
@@ -171,9 +168,10 @@ function Page() {
               handleDeleteCourse={handleDeleteCourse}
             />
           )}
+
           {/* Semester data */}
           {/* Analysis section - Graphs */}
-          <div id="details-section" className="w-full h-[600px]">
+          <div id="details-section" className="w-full h-[600px] mt-5">
             <Graph semesters={semesters} />
           </div>
         </div>

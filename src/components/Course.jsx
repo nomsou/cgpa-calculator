@@ -13,8 +13,8 @@ function Course({
       {/* Course Title */}
       <td className="pr-3">
         <input
-          className="w-full uppercase bg-gray-100 text-gray-800 h-10 px-2"
-          placeholder={"E.g SEN 101"}
+          className="w-full uppercase bg-gray-100 text-gray-800 h-10 px-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+          placeholder={"SEN 101"}
           value={course?.title}
           onChange={(e) => handleCourseTitleChange(e.target.value)}
         />
@@ -22,7 +22,7 @@ function Course({
       {/* Grade, dropdown */}
       <td className="pr-3">
         <select
-          className="w-16 text-center bg-gray-100 text-gray-800 h-10"
+          className="w-16 text-center bg-gray-100 text-gray-800 h-10 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={course?.grade}
           onChange={(e) => handleGradeChange(e.target.value)}
         >
@@ -37,9 +37,10 @@ function Course({
       {/* Units */}
       <td>
         <input
-          className="w-16 text-center bg-gray-100 text-gray-800 h-10"
+          className="w-16 text-center bg-gray-100 text-gray-800 h-10 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           placeholder="E.g 3"
           step={1}
+          // max={5}
           min={0}
           value={course?.unit}
           type="number"
@@ -48,7 +49,10 @@ function Course({
       </td>
       {/* Delete button */}
       <td>
-        <button onClick={handleDeleteCourse}>
+        <button
+          className="text-red-600 hover:text-red-800 focus:outline-none"
+          onClick={handleDeleteCourse}
+        >
           <BsFillTrashFill />
         </button>
       </td>
