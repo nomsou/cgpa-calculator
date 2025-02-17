@@ -14,7 +14,7 @@ function Course({
       <td className="pr-3">
         <input
           className="w-full uppercase bg-gray-100 text-gray-800 h-10 px-2"
-          placeholder={"E.g GEG 111"}
+          placeholder={"E.g SEN 101"}
           value={course?.title}
           onChange={(e) => handleCourseTitleChange(e.target.value)}
         />
@@ -38,7 +38,7 @@ function Course({
       <td>
         <input
           className="w-16 text-center bg-gray-100 text-gray-800 h-10"
-          placeholder="E.g 5"
+          placeholder="E.g 3"
           step={1}
           min={0}
           value={course?.unit}
