@@ -40,8 +40,7 @@ function Footer() {
           >
             @josh596
           </a>
-          . I merely improved on his design and made tweaks to the performance
-          and structure.
+          .
         </span>
       </div>
       <div className="flex justify-center gap-6 ">

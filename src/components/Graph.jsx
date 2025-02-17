@@ -40,7 +40,7 @@ function Graph({ semesters }) {
         <LineChart
           data={data}
           margin={{
-            top: 5,
+            top: 20, // Added space for the legend
             right: 30,
             left: 20,
             bottom: 5,
@@ -61,14 +61,14 @@ function Graph({ semesters }) {
           {/* Tooltip for showing info on hover */}
           <Tooltip />
 
-          {/* Legend for the two lines (GPA and CGPA) */}
-          <Legend />
+          {/* Legend for the two lines (GPA and CGPA), positioned at the top */}
+          <Legend layout="horizontal" verticalAlign="top" align="center" />
 
           {/* Line for displaying the GPA per semester */}
           <Line
             type="monotone"
             dataKey="gpa" // Data key for GPA
-            stroke="rgb(255, 99, 132)" // Red color for the GPA line
+            stroke="rgb(34, 193, 195)" // Teal color for the GPA line
             activeDot={{ r: 8 }} // Style for the active dot
           />
 
@@ -76,7 +76,7 @@ function Graph({ semesters }) {
           <Line
             type="monotone"
             dataKey="cgpa" // Data key for CGPA
-            stroke="rgb(53, 162, 235)" // Blue color for the CGPA line
+            stroke="rgb(148, 87, 233)" // Purple color for the CGPA line
             activeDot={{ r: 8 }} // Style for the active dot
           />
         </LineChart>
