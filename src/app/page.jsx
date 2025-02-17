@@ -109,7 +109,7 @@ function Page() {
     <>
       <div className="content flex flex-col grow p-6 px-8 gap-3 bg-[#E5E7EB]">
         {/* Header */}
-        <span className="content__header mb-3 border-b-4 border-red-300 self-start pb-3 text-red-600 font-extrabold">
+        <span className="content__header mb-3 border-b-4 border-blue-300 self-start pb-3 text-green-900 font-extrabold">
           GPA CALCULATOR
         </span>
 

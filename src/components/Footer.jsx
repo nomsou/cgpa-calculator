@@ -14,13 +14,13 @@ function Icon({ icon, url }) {
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8 px-6">
-      <div className="text-center text-sm mb-2">
+    <footer className="bg-green-800 text-white py-8 px-6">
+      <div className="text-center text- mb-2">
         Developed by{" "}
         <span className="font-semibold">
           <a
             href="https://github.com/nomsou"
-            className="underline hover:text-indigo-500"
+            className="underline hover:text-green-500"
             target="_blank"
             rel="noreferrer"
           >
@@ -29,12 +29,12 @@ function Footer() {
         </span>
         .
       </div>
-      <div className="text-center text-sm mb-4">
+      <div className="text-center text-base mb-4">
         <span className="font-normal text-gray-300">
           Original design by{" "}
           <a
             href="https://github.com/Josh596"
-            className="underline hover:text-indigo-500"
+            className="underline hover:text-green-500"
             target="_blank"
             rel="noreferrer"
           >
@@ -47,10 +47,10 @@ function Footer() {
       <div className="flex justify-center gap-6 mb-4">
         <Icon icon={<BsGithub size={24} />} url={"https://github.com/nomsou"} />
       </div>
-      <div className="text-center text-sm">
+      <div className="text-center text-m">
         Source code for this project is available{" "}
         <a
-          className="underline hover:text-indigo-500"
+          className="underline hover:text-green-500"
           target="_blank"
           rel="noreferrer"
           href="https://github.com/nomsou/cgpa-calculator"
