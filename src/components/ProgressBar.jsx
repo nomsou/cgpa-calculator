@@ -14,13 +14,15 @@ function ProgressBar({ value }) {
         root: {
           transform: "rotate(-108deg)",
         },
-        path: { stroke: "#7D52E9", strokeLinecap: "round", strokeWidth: 12 },
-        trail: { stroke: "rgba(100,128,200, 0.4)", strokeLinecap: "round" },
+        path: { stroke: "#00A36C", strokeLinecap: "round", strokeWidth: 12 }, // Updated to light green
+        trail: { stroke: "rgba(100, 200, 150, 0.4)", strokeLinecap: "round" }, // Light trail for contrast
       }}
     >
       <div className="text-center mt-[-30px]">
-        <strong className="block text-2xl">{value}</strong>
-        <small className="text-xs">Cumulative CGPA</small>
+        <strong className="block text-3xl font-semibold text-green-800">
+          {value}
+        </strong>
+        <small className="text-sm text-gray-800">Cumulative CGPA</small>
       </div>
     </CircularProgressbarWithChildren>
   );

@@ -5,7 +5,7 @@ function Icon({ icon, url }) {
   return (
     <a
       href={url}
-      className="h-8 w-8 text-white hover:text-blue-500 transition duration-300"
+      className="h-8 w-8 text-white hover:text-indigo-400 transition duration-300"
     >
       {icon}
     </a>
@@ -14,13 +14,13 @@ function Icon({ icon, url }) {
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-6 px-4">
-      <div className="text-center text-sm">
+    <footer className="bg-gray-800 text-white py-8 px-6">
+      <div className="text-center text-sm mb-2">
         Developed by{" "}
         <span className="font-semibold">
           <a
             href="https://github.com/nomsou"
-            className="underline hover:text-blue-500"
+            className="underline hover:text-indigo-500"
             target="_blank"
             rel="noreferrer"
           >
@@ -29,12 +29,12 @@ function Footer() {
         </span>
         .
       </div>
-      <div className="text-center text-sm mt-2">
-        <span className="font-m">
+      <div className="text-center text-sm mb-4">
+        <span className="font-normal text-gray-300">
           Original design by{" "}
           <a
             href="https://github.com/Josh596"
-            className="underline hover:text-blue-500"
+            className="underline hover:text-indigo-500"
             target="_blank"
             rel="noreferrer"
           >
@@ -44,13 +44,13 @@ function Footer() {
           and structure.
         </span>
       </div>
-      <div className="flex justify-center gap-6 mt-4">
+      <div className="flex justify-center gap-6 mb-4">
         <Icon icon={<BsGithub size={24} />} url={"https://github.com/nomsou"} />
       </div>
-      <div className="text-center mt-4 text-sm">
+      <div className="text-center text-sm">
         Source code for this project is available{" "}
         <a
-          className="underline hover:text-blue-500"
+          className="underline hover:text-indigo-500"
           target="_blank"
           rel="noreferrer"
           href="https://github.com/nomsou/cgpa-calculator"
