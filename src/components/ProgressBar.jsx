@@ -15,12 +15,12 @@ function ProgressBar({ value }) {
             transform: "rotate(-108deg)",
           },
           path: {
-            stroke: "#7D52E9", // Your custom color for the progress path
+            stroke: "#7D52E9", // Custom color for the progress path
             strokeLinecap: "round",
             strokeWidth: 12,
           },
           trail: {
-            stroke: "rgba(128,128,200, 0.4)", // Faded trail color
+            stroke: "rgba(128, 128, 200, 0.2)", // Subtle faded trail color
             strokeLinecap: "round",
           },
         }}

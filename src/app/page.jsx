@@ -173,7 +173,7 @@ function Page() {
           )}
           {/* Semester data */}
           {/* Analysis section - Graphs */}
-          <div id="details-section" className="">
+          <div id="details-section" className="w-full h-[600px]">
             <Graph semesters={semesters} />
           </div>
         </div>
