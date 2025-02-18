@@ -19,7 +19,7 @@ function Footer() {
         Developed by{" "}
         <span className="font-semibold">
           <a
-            href="https://github.com/nomsou"
+            href="https://github.com/nomsou/cgpa-calculator"
             className="underline hover:text-green-500"
             target="_blank"
             rel="noreferrer"
