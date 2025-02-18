@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Course from "../components/Course";
 import { CourseObject } from "../utils/utils";
 
 function Semester(props) {
+  const [showModal, setShowModal] = useState(false);
+
   const calculateGPA = (courses) => {
     let totalUnits = 0;
     let totalGradePoints = 0;
@@ -13,7 +15,6 @@ function Semester(props) {
     });
 
     let gpa = (totalGradePoints / totalUnits).toFixed(2);
-
     return isNaN(gpa) ? 0 : gpa;
   };
 
@@ -22,9 +23,22 @@ function Semester(props) {
     props.addCourse(props.id, course);
   };
 
+  const handleClearConfirmation = () => {
+    setShowModal(true);
+  };
+
+  const handleConfirmClear = () => {
+    props.handleClearCourses();
+    setShowModal(false);
+  };
+
+  const handleCancelClear = () => {
+    setShowModal(false);
+    window.location.href = "/"; // Redirect to homepage
+  };
+
   return (
     <div className="flex flex-col">
-      {/* Title */}
       <div className="flex pb-4">
         <span className="font-bold mr-auto text-blue-900">
           Semester {props.id + 1}
@@ -33,7 +47,7 @@ function Semester(props) {
           Semester GPA: {calculateGPA(props.courses)}
         </span>
       </div>
-      {/* Courses table */}
+
       <table className="table-auto mx-3">
         <thead>
           <tr>
@@ -43,31 +57,28 @@ function Semester(props) {
           </tr>
         </thead>
         <tbody>
-          {props.courses.map((course, index) => {
-            return (
-              <Course
-                key={index}
-                id={index}
-                course={course}
-                handleCourseTitleChange={(title) =>
-                  props.handleCourseTitleChange(props.id, index, title)
-                }
-                handleUnitChange={(unit) =>
-                  props.handleUnitChange(props.id, index, unit)
-                }
-                handleGradeChange={(grade) =>
-                  props.handleGradeChange(props.id, index, grade)
-                }
-                handleDeleteCourse={() =>
-                  props.handleDeleteCourse(props.id, index)
-                }
-              />
-            );
-          })}
+          {props.courses.map((course, index) => (
+            <Course
+              key={index}
+              id={index}
+              course={course}
+              handleCourseTitleChange={(title) =>
+                props.handleCourseTitleChange(props.id, index, title)
+              }
+              handleUnitChange={(unit) =>
+                props.handleUnitChange(props.id, index, unit)
+              }
+              handleGradeChange={(grade) =>
+                props.handleGradeChange(props.id, index, grade)
+              }
+              handleDeleteCourse={() =>
+                props.handleDeleteCourse(props.id, index)
+              }
+            />
+          ))}
         </tbody>
       </table>
 
-      {/* Add Course and Reset all */}
       <div className="flex justify-center gap-4 pt-3">
         <button
           className="bg-teal-700 text-white p-2 rounded font-bold hover:bg-teal-800"
@@ -77,11 +88,34 @@ function Semester(props) {
         </button>
         <button
           className="bg-red-600 text-white p-2 rounded font-bold hover:bg-red-700"
-          onClick={props.handleClearCourses}
+          onClick={handleClearConfirmation}
         >
           Clear All
         </button>
       </div>
+
+      {/* Confirmation Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+            <p className="text-lg font-bold">Are you sure?</p>
+            <div className="flex justify-center gap-4 mt-4">
+              <button
+                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                onClick={handleConfirmClear}
+              >
+                Yes
+              </button>
+              <button
+                className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                onClick={handleCancelClear}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
