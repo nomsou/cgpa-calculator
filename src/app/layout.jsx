@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "CGPA CALCULATOR",
-  description: "A simple cgpa calculator for Nigerian Students",
+  description: "A simple cgpa calculator for Nigerian Students 😝",
 };
 
 export default function RootLayout({ children }) {
